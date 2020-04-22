@@ -81,5 +81,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/zhangxin-github/hexo.git
+  repo: https://github.com/zhangxin-github/zhangxin-github.github.io.git
   branch: gh-pages
