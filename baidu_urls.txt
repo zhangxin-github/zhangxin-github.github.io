@@ -1,10 +1,3 @@
 https://hellozhang.xin/2020/04/23/test/
 https://hellozhang.xin/2020/03/11/springcloud-gateway-nacos-dynamic-routing/
 https://hellozhang.xin/2019/10/10/vue-elementui-form-validation/
-https://hellozhang.xin/2019/09/26/spingboot-static-resource-path/
-https://hellozhang.xin/2019/09/12/vue-packages-version-mismatch/
-https://hellozhang.xin/2019/08/20/using-vuex-to-realize-dict/
-https://hellozhang.xin/2019/07/28/use-ideaj/
-https://hellozhang.xin/2019/07/28/use-oracle-xe/
-https://hellozhang.xin/2019/07/20/org-apache-ibatis-binding-BindingException-Parameter-not-found/
-https://hellozhang.xin/2018/09/23/vuepress-install/
