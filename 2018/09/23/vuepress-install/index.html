@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="VuePress 是一个基于Vue的轻量级静态网站生成器，用于满足项目文档的需求而创建的。 VuePress 安装VuePress并不会象其他静态网站工具如：Hexo 那样帮我们创建好目录结构和文件。因此需要我们在指定文件夹中新建目录结构和文件如下： 123456789.├─ docs│  └─ .vuepress│     └─ config.js│  ├─ guide│     └─ gett">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用VuePress生成项目文档网站">
+<meta property="og:url" content="https://hellozhang.xin/2018/09/23/vuepress-install/index.html">
+<meta property="og:site_name" content="巫师的印象笔记">
+<meta property="og:description" content="VuePress 是一个基于Vue的轻量级静态网站生成器，用于满足项目文档的需求而创建的。 VuePress 安装VuePress并不会象其他静态网站工具如：Hexo 那样帮我们创建好目录结构和文件。因此需要我们在指定文件夹中新建目录结构和文件如下： 123456789.├─ docs│  └─ .vuepress│     └─ config.js│  ├─ guide│     └─ gett">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-23T01:57:36.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用VuePress生成项目文档网站">
+<meta name="twitter:description" content="VuePress 是一个基于Vue的轻量级静态网站生成器，用于满足项目文档的需求而创建的。 VuePress 安装VuePress并不会象其他静态网站工具如：Hexo 那样帮我们创建好目录结构和文件。因此需要我们在指定文件夹中新建目录结构和文件如下： 123456789.├─ docs│  └─ .vuepress│     └─ config.js│  ├─ guide│     └─ gett">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hellozhang.xin/2018/09/23/vuepress-install/">
+
+
+
+
+
+  <title>使用VuePress生成项目文档网站 | 巫师的印象笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">巫师的印象笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellozhang.xin/2018/09/23/vuepress-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="巫师">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="巫师的印象笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用VuePress生成项目文档网站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T16:33:02+08:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>VuePress</strong> 是一个基于Vue的轻量级静态网站生成器，用于满足项目文档的需求而创建的。</p>
+<h2 id="VuePress-安装"><a href="#VuePress-安装" class="headerlink" title="VuePress 安装"></a>VuePress 安装</h2><p>VuePress并不会象其他静态网站工具如：Hexo 那样帮我们创建好目录结构和文件。因此需要我们在指定文件夹中新建目录结构和文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├─ docs</span><br><span class="line">│  └─ .vuepress</span><br><span class="line">│     └─ config.js</span><br><span class="line">│  ├─ guide</span><br><span class="line">│     └─ getting-started.md</span><br><span class="line">│     └─ README.md</span><br><span class="line">│  ├─ README.md</span><br><span class="line">└─ package.json</span><br></pre></td></tr></table></figure>
+<h3 id="config-js"><a href="#config-js" class="headerlink" title="config.js"></a>config.js</h3><p>网站的 <a href>配置</a> 信息，您可以在此配置大部分的参数。这里提供常用基本的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    base:&apos;/vuepress/&apos;,</span><br><span class="line">    title: &apos;Wizard&apos;,</span><br><span class="line">    description: &apos;Welcome to Wizard site&apos;,</span><br><span class="line">    themeConfig: &#123;</span><br><span class="line">        nav: [</span><br><span class="line">            &#123; text: &apos;Home&apos;, link: &apos;/&apos; &#125;,</span><br><span class="line">            &#123; text: &apos;指南&apos;, link: &apos;/guide/&apos; &#125;,</span><br><span class="line">            &#123; text: &apos;VuePress&apos;, link: &apos;https://vuepress.vuejs.org/&apos; &#125;,</span><br><span class="line">        ],</span><br><span class="line">        sidebar: &#123; &apos;/guide/&apos;: genSidebarConfig(&apos;指南&apos;) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function genSidebarConfig(title) &#123;</span><br><span class="line">    return [</span><br><span class="line">        &#123;</span><br><span class="line">          title,</span><br><span class="line">          collapsable: false,</span><br><span class="line">          children: [</span><br><span class="line">            &apos;&apos;,</span><br><span class="line">            &apos;getting-started&apos;,</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;docs:dev&quot;: &quot;vuepress dev docs&quot;,</span><br><span class="line">    &quot;docs:build&quot;: &quot;vuepress build docs&quot;,</span><br><span class="line">    &quot;deploy&quot;: &quot;gh-pages -d docs/.vuepress/dist&quot;,</span><br><span class="line">    &quot;deploy:build&quot;: &quot;npm run docs:build &amp;&amp; gh-pages -d docs/.vuepress/dist&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;gh-pages&quot;: &quot;^2.0.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>执行下列命令，可以开始写作了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装VuePress</span><br><span class="line">npm install -g vuepress</span><br><span class="line"></span><br><span class="line"># 安装组件</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"># 开始写作</span><br><span class="line">npm run docs:dev</span><br><span class="line"></span><br><span class="line"># 构建静态文件</span><br><span class="line">npm run docs:build</span><br></pre></td></tr></table></figure>
+<h3 id="在Github-Page部署"><a href="#在Github-Page部署" class="headerlink" title="在Github Page部署"></a>在Github Page部署</h3><ol>
+<li>创建仓库</li>
+</ol>
+<blockquote>
+<ul>
+<li>如果要部署到https://{USERNAME}.github.io地址上，需要创建以{USERNAME}.github.io为名字的仓库</li>
+<li>如果部署到https://{USERNAME}.github.io/{REPO}/地址上，要创建{REPO}仓库。</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li>添加远程仓库</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 用你仓库的url</span><br><span class="line">git remote add origin https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;.git   </span><br><span class="line"></span><br><span class="line"># 提交到你的仓库</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>发布</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 使用gh-pages组件打包并推送</span><br><span class="line">$ sudo npm run deploy:build</span><br></pre></td></tr></table></figure>
+<p>看到如下日志部署成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm run docs:build &amp;&amp; gh-pages -d docs/.vuepress/dist</span><br><span class="line"></span><br><span class="line">&gt; vuepress build docs</span><br><span class="line"></span><br><span class="line"> WAIT  Extracting site metadata...</span><br><span class="line">[13:51:40] Compiling Client</span><br><span class="line">[13:51:40] Compiling Server</span><br><span class="line">(node:2939) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead</span><br><span class="line">[13:51:45] Compiled Server in 5s</span><br><span class="line">[13:51:49] Compiled Client in 9s</span><br><span class="line"> WAIT  Rendering static HTML...</span><br><span class="line"></span><br><span class="line"> DONE  Success! Generated static files in docs/.vuepress/dist.</span><br><span class="line"></span><br><span class="line">Published</span><br></pre></td></tr></table></figure>
+<p>部署成功后，进入 GitHub 仓库可以看到自动创建了一个新的名为 gh_pages 的分支。在仓库 <strong>setting</strong> 中选择这个分支，通过如下地址即可访问：</p>
+<p>https://{USERNAME}.github.io/{REPO}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/30/kong-docker-install/" rel="next" title="kong使用docker安装">
+                <i class="fa fa-chevron-left"></i> kong使用docker安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/20/org-apache-ibatis-binding-BindingException-Parameter-not-found/" rel="prev" title="org.apache.ibatis.binding.BindingException. Parameter 'XXX' not found. Available parameters are [arg0, params, param1, param2]">
+                org.apache.ibatis.binding.BindingException. Parameter 'XXX' not found. Available parameters are [arg0, params, param1, param2] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">巫师</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VuePress-安装"><span class="nav-number">1.</span> <span class="nav-text">VuePress 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config-js"><span class="nav-number">1.1.</span> <span class="nav-text">config.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-json"><span class="nav-number">1.2.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令"><span class="nav-number">1.3.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Github-Page部署"><span class="nav-number">1.4.</span> <span class="nav-text">在Github Page部署</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">巫师</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
