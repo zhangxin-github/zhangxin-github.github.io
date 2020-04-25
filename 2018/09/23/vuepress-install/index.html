@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://hellozhang.xin/2018/09/23/vuepress-install/"/>
+  <link rel="canonical" href="https://hellozhang.xin/2018/09/23/vuepress-install/">
 
 
 
@@ -153,7 +153,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">巫师的印象笔记</span>
         <span class="logo-line-after"><i></i></span>
@@ -183,7 +183,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -193,7 +193,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -236,7 +236,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="巫师">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -302,7 +302,7 @@
         <p><strong>VuePress</strong> 是一个基于Vue的轻量级静态网站生成器，用于满足项目文档的需求而创建的。</p>
 <h2 id="VuePress-安装"><a href="#VuePress-安装" class="headerlink" title="VuePress 安装"></a>VuePress 安装</h2><p>VuePress并不会象其他静态网站工具如：Hexo 那样帮我们创建好目录结构和文件。因此需要我们在指定文件夹中新建目录结构和文件如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├─ docs</span><br><span class="line">│  └─ .vuepress</span><br><span class="line">│     └─ config.js</span><br><span class="line">│  ├─ guide</span><br><span class="line">│     └─ getting-started.md</span><br><span class="line">│     └─ README.md</span><br><span class="line">│  ├─ README.md</span><br><span class="line">└─ package.json</span><br></pre></td></tr></table></figure>
-<h3 id="config-js"><a href="#config-js" class="headerlink" title="config.js"></a>config.js</h3><p>网站的 <a href="">配置</a> 信息，您可以在此配置大部分的参数。这里提供常用基本的配置：</p>
+<h3 id="config-js"><a href="#config-js" class="headerlink" title="config.js"></a>config.js</h3><p>网站的 <a href>配置</a> 信息，您可以在此配置大部分的参数。这里提供常用基本的配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    base:&apos;/vuepress/&apos;,</span><br><span class="line">    title: &apos;Wizard&apos;,</span><br><span class="line">    description: &apos;Welcome to Wizard site&apos;,</span><br><span class="line">    themeConfig: &#123;</span><br><span class="line">        nav: [</span><br><span class="line">            &#123; text: &apos;Home&apos;, link: &apos;/&apos; &#125;,</span><br><span class="line">            &#123; text: &apos;指南&apos;, link: &apos;/guide/&apos; &#125;,</span><br><span class="line">            &#123; text: &apos;VuePress&apos;, link: &apos;https://vuepress.vuejs.org/&apos; &#125;,</span><br><span class="line">        ],</span><br><span class="line">        sidebar: &#123; &apos;/guide/&apos;: genSidebarConfig(&apos;指南&apos;) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function genSidebarConfig(title) &#123;</span><br><span class="line">    return [</span><br><span class="line">        &#123;</span><br><span class="line">          title,</span><br><span class="line">          collapsable: false,</span><br><span class="line">          children: [</span><br><span class="line">            &apos;&apos;,</span><br><span class="line">            &apos;getting-started&apos;,</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;docs:dev&quot;: &quot;vuepress dev docs&quot;,</span><br><span class="line">    &quot;docs:build&quot;: &quot;vuepress build docs&quot;,</span><br><span class="line">    &quot;deploy&quot;: &quot;gh-pages -d docs/.vuepress/dist&quot;,</span><br><span class="line">    &quot;deploy:build&quot;: &quot;npm run docs:build &amp;&amp; gh-pages -d docs/.vuepress/dist&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;gh-pages&quot;: &quot;^2.0.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
