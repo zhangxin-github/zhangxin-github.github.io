@@ -19,6 +19,8 @@ $ npm install hexo-renderer-pug hexo-renderer-stylus --save
 ## 参考网站
 https://butterfly.js.org/posts/4aa8abbe/
 https://nbchen.com/posts/hexo-butterfly.html
+https://github.com/wugenqiang/NoteBook/blob/master/Project/Hexo-Butterfly/Hexo-Butterfly%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md
+https://github.com/1976083684/hexo-blog/blob/master/source/_posts/Hexo%E6%90%AD%E5%BB%BAButterfly%E4%B8%BB%E9%A2%98%E5%B9%B6%E5%BF%AB%E9%80%9F%E7%BE%8E%E5%8C%96.md
 
 # 写作
 

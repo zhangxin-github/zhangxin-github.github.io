@@ -9,6 +9,3 @@ Allow: /tags/
 Disallow: /js/
 Disallow: /css/
 Disallow: /lib/
-
-Sitemap: https://hellozhang.xin/sitemap.xml
-Sitemap: https://hellozhang.xin/baidusitemap.xml
