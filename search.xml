@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2025/03/11/github-clone-ssh/"/>
+      <url>/2025/03/11/github-clone-ssh/</url>
+      
+        <content type="html"><![CDATA[<p>我们在使用 github 上传项目时，如何走 https 方式，经常出现莫名奇妙的错误，经过一翻查阅，决定采用 SSH 方式链接。</p><h2 id="配置-SSH"><a href="#配置-SSH" class="headerlink" title="配置 SSH"></a>配置 SSH</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t &quot;你的邮箱@mail.com&quot;</span><br></pre></td></tr></table></figure><h2 id="获取-ssh-key-内容"><a href="#获取-ssh-key-内容" class="headerlink" title="获取 ssh key 内容"></a>获取 ssh key 内容</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat id_ras.pub</span><br><span class="line">ssh-raa xxxxxxxxxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure><h2 id="创建-github-ssh-key"><a href="#创建-github-ssh-key" class="headerlink" title="创建 github ssh key"></a>创建 github ssh key</h2><p>setting-&gt;SSH and GPG key -&gt; new SSH key，复制上述的 key 内容</p><h2 id="复制-SSH-clone-地址"><a href="#复制-SSH-clone-地址" class="headerlink" title="复制 SSH clone 地址"></a>复制 SSH clone 地址</h2><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>需要知道ssh key的配置是针对每台主机的！，比如我在某台主机上操作git和我的远程仓库，走ssh协议，就需要配置ssh key，放上去的key是当前主机的ssh公钥。那么如果我换了一台其他主机，想要实现无密登录，也就需要重新配置。</p><p>（1）为什么要配？<br>配了才能实现push代码的时候不需要反复输入自己的github账号密码，更方便<br>（2）每使用一台主机都要配？<br>是的，每使用一台新主机进行git远程操作，想要实现无密，都需要配置。并不是说每个账号配一次就够了，而是每一台主机都需要配。<br>（3）配了为啥就不用密码了？<br>因为配置的时候是把当前主机的公钥放到了你的github账号下，相当于当前主机和你的账号做了一个关联，你在这台主机上已经登录了你的账号，此时此刻github认为是该账号主人在操作这台主机，在配置ssh后就信任该主机了。所以下次在使用git的时候即使没有登录github，也能直接从本地push代码到远程了。当然这里不要混淆了，你不能随意push你的代码到任何仓库，你只能push到你自己的仓库或者其他你有权限的仓库！</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot上传文件时MultipartFile报空问题解决方法</title>
       <link href="/2021/08/26/springboot-file-upload-multipartfile/"/>
       <url>/2021/08/26/springboot-file-upload-multipartfile/</url>
