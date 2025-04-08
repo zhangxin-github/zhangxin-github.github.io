@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>hexo-install-theme-butterfly | 巫师的印象笔记</title><meta name="author" content="巫师"><meta name="copyright" content="巫师"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="克隆最新版本下载稳定版本在终端窗口下，定位到 butterfly 站点目录下。使用 Git checkout 代码： $ cd your-hexo-site$ git clone -b master https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git themes&#x2F;butterfly前往 NexT 版本 发布页面。选择你所需要的版本，下载 D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo-install-theme-butterfly">
+<meta property="og:url" content="https://zhangxin-github.github.io/2020/04/23/hexo-install-theme-butterfly/index.html">
+<meta property="og:site_name" content="巫师的印象笔记">
+<meta property="og:description" content="克隆最新版本下载稳定版本在终端窗口下，定位到 butterfly 站点目录下。使用 Git checkout 代码： $ cd your-hexo-site$ git clone -b master https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git themes&#x2F;butterfly前往 NexT 版本 发布页面。选择你所需要的版本，下载 D">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhangxin-github.github.io/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png">
+<meta property="article:published_time" content="2020-04-23T02:15:39.000Z">
+<meta property="article:modified_time" content="2025-04-07T07:44:32.000Z">
+<meta property="article:author" content="巫师">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhangxin-github.github.io/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "hexo-install-theme-butterfly",
+  "url": "https://zhangxin-github.github.io/2020/04/23/hexo-install-theme-butterfly/",
+  "image": "https://zhangxin-github.github.io/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png",
+  "datePublished": "2020-04-23T02:15:39.000Z",
+  "dateModified": "2025-04-07T07:44:32.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "巫师",
+      "url": "https://zhangxin-github.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zhangxin-github.github.io/2020/04/23/hexo-install-theme-butterfly/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'hexo-install-theme-butterfly',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/photo/"><i class="fa-fw fa-solid fa-image"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">巫师的印象笔记</span></a><a class="nav-page-title" href="/"><span class="site-name">hexo-install-theme-butterfly</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/photo/"><i class="fa-fw fa-solid fa-image"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">hexo-install-theme-butterfly</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-04-23T02:15:39.000Z" title="发表于 2020-04-23 10:15:39">2020-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-07T07:44:32.000Z" title="更新于 2025-04-07 15:44:32">2025-04-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/hexo/">hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">678</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">克隆最新版本</button><button type="button" class="tab">下载稳定版本</button></div><div class="tab-contents"><div class="tab-item-content active"><p>在终端窗口下，定位到 butterfly 站点目录下。使用 Git checkout 代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure></div><div class="tab-item-content"><p>前往 NexT 版本 <a href="https://github.com/iissnan/hexo-theme-next/releases">发布页面</a>。<br>选择你所需要的版本，下载 Download 区域下的 Source Code (zip) 到本地。例如，下载 v0.4.0 版本：<br><img src="https://theme-next.iissnan.com/uploads/five-minutes-setup/download-stable-version.png" alt="next-releases"><br>解压所下载的压缩包至站点的 themes 目录下， 并将 解压后的文件夹名称（hexo-theme-next-0.4.0）更改为 next。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>当 克隆&#x2F;下载 完成后，打开 <strong>站点配置文件</strong>， 找到 theme 字段，注释掉默认的主题并将其值更改为 butterfly。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># theme: landscape</span></span><br><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>建议复制 themes&#x2F;butterfly 目录下的 _config.yml 文件到根目录下，并重命名为 _config.butterfly.yml ，以覆盖默认配置。</p>
+</blockquote>
+<h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><ol>
+<li>固定导航</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="attr">fixed:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>在配置文件 _config.butterfly.yml 中，找到 menu 字段，并添加以下内容：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu</span>:</span><br><span class="line">  首页: / || fas fa-home</span><br><span class="line">  归档: <span class="regexp">/archives/</span> || fas fa-archive</span><br><span class="line">  标签: <span class="regexp">/tags/</span> || fas fa-tags</span><br><span class="line">  分类: <span class="regexp">/categories/</span> || fas fa-folder-open</span><br><span class="line">  娱乐||fas fa-<span class="attr">list</span>:</span><br><span class="line">    音乐: <span class="regexp">/music/</span> || fas fa-music</span><br><span class="line">    照片: <span class="regexp">/photo/</span> || fa-solid fa-image</span><br><span class="line">    电影: <span class="regexp">/movies/</span> || fas fa-video</span><br><span class="line">  友链: <span class="regexp">/link/</span> || fas fa-link</span><br><span class="line">  关于: <span class="regexp">/about/</span> || fas fa-heart</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><ol>
+<li>安装插件：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install hexo-generator-search --save</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改配置文件 <strong>_config.yml</strong>：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="comment"># Choose: algolia_search / local_search / docsearch</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">local_search</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new page <span class="string">&quot;archives&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new page <span class="string">&quot;tags&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new page <span class="string">&quot;categories&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改副标题-每日一句"><a href="#修改副标题-每日一句" class="headerlink" title="修改副标题(每日一句)"></a>修改副标题(每日一句)</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">subtitle:</span><br><span class="line">  enable: true</span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash">Choose: <span class="literal">false</span>/1/2/3</span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash"><span class="literal">false</span> - <span class="built_in">disable</span> the <span class="keyword">function</span></span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash">1 - hitokoto.cn</span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash">2 - https://api.aa1.cn/doc/yiyan.html</span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash">3 - jinrishici.com</span></span><br><span class="line">  source: 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Need to install the hexo-wordcount plugin</span></span><br><span class="line">npm install hexo-wordcount --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Configuration</span></span><br><span class="line">wordcount:</span><br><span class="line">  enable: true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片设置"><a href="#图片设置" class="headerlink" title="图片设置"></a>图片设置</h3><ol>
+<li>主页封面图片</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_img:</span> <span class="string">/img/index.jpg</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>footer 背景</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># footer是否显示图片背景(与top_img一致)</span></span><br><span class="line"><span class="attr">footer_img:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>文章详情页图片</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span>        <span class="comment"># 标题</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">hello</span>]             <span class="comment"># 标签</span></span><br><span class="line"><span class="attr">categories:</span>               <span class="comment"># 分类</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">hello</span> <span class="string">word~</span>  <span class="comment"># 描述</span></span><br><span class="line"><span class="attr">top_img:</span> <span class="string">/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png</span> <span class="comment"># 文章顶部背景图</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png</span>   <span class="comment"># 文章封面</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>归档顶部图片</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">archive_img:</span> <span class="string">/img/archive.jpg</span></span><br></pre></td></tr></table></figure>
+
+
+<ol start="5">
+<li>标签顶部图片</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tag_img:</span> <span class="string">/img/tag.jpg</span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>分类顶部图片</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">category_img:</span> <span class="string">/img/category.jpg</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="主题配色"><a href="#主题配色" class="headerlink" title="主题配色"></a>主题配色</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># theme_color:</span></span><br><span class="line"><span class="comment">#   enable: true</span></span><br><span class="line"><span class="comment">#   main: &quot;#49B1F5&quot;</span></span><br><span class="line"><span class="comment">#   paginator: &quot;#00c4b6&quot;</span></span><br><span class="line"><span class="comment">#   button_hover: &quot;#FF7242&quot;</span></span><br><span class="line"><span class="comment">#   text_selection: &quot;#00c4b6&quot;</span></span><br><span class="line"><span class="comment">#   link_color: &quot;#99a9bf&quot;</span></span><br><span class="line"><span class="comment">#   meta_color: &quot;#858585&quot;</span></span><br><span class="line"><span class="comment">#   hr_color: &quot;#A4D8FA&quot;</span></span><br><span class="line"><span class="comment">#   code_foreground: &quot;#F47466&quot;</span></span><br><span class="line"><span class="comment">#   code_background: &quot;rgba(27, 31, 35, .05)&quot;</span></span><br><span class="line"><span class="comment">#   toc_color: &quot;#00c4b6&quot;</span></span><br><span class="line"><span class="comment">#   blockquote_padding_color: &quot;#49b1f5&quot;</span></span><br><span class="line"><span class="comment">#   blockquote_background_color: &quot;#49b1f5&quot;</span></span><br><span class="line"><span class="comment">#   scrollbar_color: &quot;#49b1f5&quot;</span></span><br><span class="line"><span class="comment">#   meta_theme_color_light: &quot;ffffff&quot;</span></span><br><span class="line"><span class="comment">#   meta_theme_color_dark: &quot;#0d0d0d&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="背景图-动态线条效果"><a href="#背景图-动态线条效果" class="headerlink" title="背景图-动态线条效果"></a>背景图-动态线条效果</h3><p>看到官网背景漂亮的线条效果，点击还会动态变化，效果 pretty good。直接修改 _config.butterfly.yml 文件:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># canvas_ribbon</span></span><br><span class="line"><span class="comment"># See: https://github.com/hustcc/ribbon.js</span></span><br><span class="line"><span class="attr">canvas_ribbon:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># The size of ribbon</span></span><br><span class="line">  <span class="attr">size:</span> <span class="number">150</span></span><br><span class="line">  <span class="comment"># The opacity of ribbon (0 ~ 1)</span></span><br><span class="line">  <span class="attr">alpha:</span> <span class="number">0.6</span></span><br><span class="line">  <span class="attr">zIndex:</span> <span class="number">-1</span></span><br><span class="line">  <span class="attr">click_to_change:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">mobile:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://zhangxin-github.github.io">巫师</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://zhangxin-github.github.io/2020/04/23/hexo-install-theme-butterfly/">https://zhangxin-github.github.io/2020/04/23/hexo-install-theme-butterfly/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://zhangxin-github.github.io" target="_blank">巫师的印象笔记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post-share"><div class="social-share" data-image="/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2020/03/11/springcloud-gateway-nacos-dynamic-routing/" title="springcloud-gateway-nacos-dynamic-routing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">springcloud-gateway-nacos-dynamic-routing</div></div><div class="info-2"><div class="info-item-1">nacos 发布配置 通过nacos提供的SDK或直接调用OPENAPI方式发布配置 发布配置注意多个路由放在一个配置中，而不是一个路由创建一个配置  gateway 监听nacos下发的配置 使用框架提供的动态路由方法，必须使用blade-gateway-dev.json  [    &#123;    &quot;id&quot;: &quot;example-list&quot;,    &quot;order&quot;: 0,    &quot;predicates&quot;: [                &#123;                    &quot;name&quot;: &quot;Path&quot;,                    &quot;args&quot;: &#123;                        &quot;pattern&quot;: &quot;/api/football/match/list&quot;                    &#125;               ...</div></div></div></a><a class="pagination-related" href="/2021/08/26/Q&amp;A/springboot-file-upload-multipartfile/" title="SpringBoot上传文件报：Required request part 'file' is not present，Current request is not a multipart request."><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">SpringBoot上传文件报：Required request part 'file' is not present，Current request is not a multipart request.</div></div><div class="info-2"><div class="info-item-1"> 问题描述  SpringBoot上传后台接收的都是null。且总是报各种错误例如：Required request part ‘file’ is not present，Current request is not a multipart request. SpringBoot默认是基于StandardServletMultipartResolve处理，MultipartStandardServletMultipartResolver依赖于Servlet3.0对multipart请求的支持（始于Spring3.1）；CommonsMultipartResolver使用Jakarta Commons FileUpload解析multipart请求。本文最终采用CommonsMultipartResolver。  解决办法2.1. 加入配置类  import org.springframework.context.annotation.Bean;import org.springframework.context.annotation.Configuration;import...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/03/31/hexo-asset-storage/" title="hexo 资源存储"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-31</div><div class="info-item-2">hexo 资源存储</div></div><div class="info-2"><div class="info-item-1">Hexo资源（Asset）代表 source 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件。比方说一篇文章中可能需要引用图片，那么图片就可以作为资源存在。如果图片多了就需要有效的管理，hexo 提供了两种方法：  在 source 文件夹创建 images 文件夹，将图片统一放到文件中。通过以下语法引用图片  ![](/images/qrcode.png)    开启 post_asset_folder: true  想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。通过将 config.yml 文件中的 post_asset_folder 选项设为 true 来打开。 _config.ymlpost_asset_folder: true  Hexo将会在你每一次通过 hexo new post 命令创建新文章时自动创建一个与文章同名的文件夹，然后将图片或其他资源放入其中。引入 hexo-renderer-marked ，它允许你无需使用 asset_img 标签插件就可以在 markdown...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">巫师</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>欢迎关注我的微信公众号<img style="width:100%;" src="/images/qrcode.png"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E4%B8%BB%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">2.</span> <span class="toc-text">导航栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2"><span class="toc-number">3.</span> <span class="toc-text">本地搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">4.</span> <span class="toc-text">创建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%89%AF%E6%A0%87%E9%A2%98-%E6%AF%8F%E6%97%A5%E4%B8%80%E5%8F%A5"><span class="toc-number">5.</span> <span class="toc-text">修改副标题(每日一句)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="toc-number">6.</span> <span class="toc-text">字数统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE"><span class="toc-number">7.</span> <span class="toc-text">图片设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E8%89%B2"><span class="toc-number">8.</span> <span class="toc-text">主题配色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%9B%BE-%E5%8A%A8%E6%80%81%E7%BA%BF%E6%9D%A1%E6%95%88%E6%9E%9C"><span class="toc-number">9.</span> <span class="toc-text">背景图-动态线条效果</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/06/Q&amp;A/picgo-cannot-search-plugins/" title="Picgo 搜索不到插件">Picgo 搜索不到插件</a><time datetime="2025-04-06T12:21:03.000Z" title="发表于 2025-04-06 20:21:03">2025-04-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/04/bladex/oss-local/" title="Bladex OSS 本地存储">Bladex OSS 本地存储</a><time datetime="2025-04-04T14:14:44.000Z" title="发表于 2025-04-04 22:14:44">2025-04-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/04/rocky-linux/rocky-linux-9-install/" title="Rocky Linux 9 安装">Rocky Linux 9 安装</a><time datetime="2025-04-04T14:14:44.000Z" title="发表于 2025-04-04 22:14:44">2025-04-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/04/rocky-linux/rocky-linux-9-network/" title="Rocky Linux 9 网络配置">Rocky Linux 9 网络配置</a><time datetime="2025-04-04T14:14:44.000Z" title="发表于 2025-04-04 22:14:44">2025-04-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/31/hexo-asset-storage/" title="hexo 资源存储">hexo 资源存储</a><time datetime="2025-03-31T09:15:09.000Z" title="发表于 2025-03-31 17:15:09">2025-03-31</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/images/hexo-install-theme-butterfly/butterfly-docs-03-cover.png);"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2025 By 巫师</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
