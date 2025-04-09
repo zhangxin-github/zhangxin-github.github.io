@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhangxin-github.github.io/google1acb1b4539b23bbe.html</loc>
+    
+    <lastmod>2025-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhangxin-github.github.io/2019/07/20/Q&A/org-apache-ibatis-binding-BindingException-Parameter-not-found/</loc>
     
     <lastmod>2025-04-08</lastmod>
@@ -265,7 +274,7 @@
 
   <url>
     <loc>https://zhangxin-github.github.io/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -273,56 +282,56 @@
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/github/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/hexo/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/mybatis/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/picgo/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/SpringBoot/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/vue/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/Bladex/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/tags/Rocky-Linux/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -331,28 +340,28 @@
   
   <url>
     <loc>https://zhangxin-github.github.io/categories/hexo/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/categories/Q-A/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/categories/Bladex/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangxin-github.github.io/categories/Linux/</loc>
-    <lastmod>2025-04-08</lastmod>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
