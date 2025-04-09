@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zhangxin-github.github.io/google1acb1b4539b23bbe.html</loc>
-    
-    <lastmod>2025-04-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhangxin-github.github.io/2019/07/20/Q&A/org-apache-ibatis-binding-BindingException-Parameter-not-found/</loc>
     
     <lastmod>2025-04-08</lastmod>
@@ -236,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://zhangxin-github.github.io/2019/07/28/use-ideaj/</loc>
+    <loc>https://zhangxin-github.github.io/2018/06/27/use-jenkins-for-auto-deploy/</loc>
     
     <lastmod>2020-04-23</lastmod>
     
@@ -245,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://zhangxin-github.github.io/2018/06/27/use-jenkins-for-auto-deploy/</loc>
+    <loc>https://zhangxin-github.github.io/2019/07/28/use-ideaj/</loc>
     
     <lastmod>2020-04-23</lastmod>
     
